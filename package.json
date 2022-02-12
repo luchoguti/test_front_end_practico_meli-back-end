@@ -1,0 +1,18 @@
+{
+  "name": "back-end-meli-luis-torres",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "test": "jest",
+    "lint": "eslint --ext .js ./"
+  },
+  "dependencies": {
+    "axios": "^0.25.0",
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.3",
+    "express": "^4.17.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "properties-reader": "^2.2.0"
+  }
+}
