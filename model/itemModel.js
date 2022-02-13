@@ -8,7 +8,7 @@ let itemProduct = {};
  * @returns {Promise<itemProduct>}
  */
 const getProductMeli = async (id) => {
-    if (typeof itemProduct[id] !== 'undefined' && itemProduct[id].length > 0) {
+    if (typeof itemProduct[id] !== 'undefined' && Object.entries(itemProduct[id].length) > 0) {
         return new Promise(
             function (resolve, reject) {
                 resolve(itemProduct[id]);
@@ -31,10 +31,10 @@ const getProductMeli = async (id) => {
 }
 
 const getDescriptionProductMeli = async (id) => {
-    if (typeof itemProduct[id].description !== 'undefined' && itemProduct[id].description.length > 0) {
+    if (typeof itemProduct[`${id}_description`] !== 'undefined' && Object.entries(itemProduct[`${id}_description`]).length > 0) {
         return new Promise(
             function (resolve, reject) {
-                resolve(itemProduct[id].description);
+                resolve(itemProduct[`${id}_description`]);
                 reject(new Error('Bug querying item product'));
             }
         )
@@ -44,7 +44,7 @@ const getDescriptionProductMeli = async (id) => {
             url: `${url_meli}/items/${id}/description`,
             responseType: "json"
         }).then(res => {
-            itemProduct[id].description = res.data;
+            itemProduct[`${id}_description`] = res.data;
             return res.data;
         }).catch(err => {
             console.error(`debug http axios ${err}`);

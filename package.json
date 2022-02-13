@@ -4,7 +4,8 @@
   "scripts": {
     "start": "nodemon ./bin/www",
     "test": "jest",
-    "lint": "eslint --ext .js ./"
+    "lint": "eslint --ext .js ./",
+    "production": "node ./bin/www"
   },
   "dependencies": {
     "axios": "^0.25.0",
@@ -12,7 +13,9 @@
     "debug": "^4.3.3",
     "express": "^4.17.2",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.15",
     "properties-reader": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
