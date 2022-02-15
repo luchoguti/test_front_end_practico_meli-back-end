@@ -8,7 +8,7 @@ let itemProduct = {};
  * @returns {Promise<itemProduct>}
  */
 const getProductMeli = async (id) => {
-    if (typeof itemProduct[id] !== 'undefined' && Object.entries(itemProduct[id].length) > 0) {
+    if (typeof itemProduct[id] !== 'undefined' && Object.entries(itemProduct[id]).length > 0) {
         return new Promise(
             function (resolve, reject) {
                 resolve(itemProduct[id]);
